@@ -4,40 +4,51 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
+}
 
-  .bear-img {
-    max-width: 100vw;
-  }
-  
-  .container {
+.bear-img {
+    max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+}
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .buttons {
+}
+
+.buttons {
     display: flex;
-  }
-  
-  .yes {
+    margin-top: 20px; /* Add extra spacing between buttons */
+}
+
+.yes,
+.no {
+    padding: 10px 20px; /* Add padding to buttons for better touch experience */
+    margin-right: 10px; /* Add margin between buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.yes {
     background-color: green;
     color: white;
-  }
-  
-  .no {
+}
+
+.no {
     background-color: red;
-    color: white; 
-  }
+    color: white;
+}
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .buttons {
-      flex-direction: column;
+        flex-direction: column;
+        margin-top: 10px; /* Adjust spacing between buttons for mobile devices */
     }
-  }
 
-  @media screen and (min-width: 768px) {
-    .element {
-        max-width: 768px; /* For example, limit to 768px for screens larger than 768px */
+    .yes,
+    .no {
+        margin-right: 0; /* Remove margin between buttons on mobile */
+        margin-bottom: 10px; /* Add margin between buttons vertically */
     }
-  }
+}
