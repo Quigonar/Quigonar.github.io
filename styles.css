@@ -7,7 +7,7 @@
 }
 
 .bear-img {
-    max-width: 100%; /* Set the maximum width of the image to 100% of its container */
+    max-width: 100%;
 }
 
 .container {
@@ -17,14 +17,14 @@
 }
 
 .buttons {
-    display: flex;
-    margin-top: 20px; /* Add extra spacing between buttons */
+    margin-top: 20px;
+    line-height: 1;
 }
 
 .yes,
 .no {
-    padding: 10px 20px; /* Add padding to buttons for better touch experience */
-    margin-right: 10px; /* Add margin between buttons */
+    padding: 10px 20px;
+    margin-right: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -43,12 +43,12 @@
 @media (max-width: 600px) {
     .buttons {
         flex-direction: column;
-        margin-top: 10px; /* Adjust spacing between buttons for mobile devices */
+        margin-top: 10px;
     }
 
     .yes,
     .no {
-        margin-right: 0; /* Remove margin between buttons on mobile */
-        margin-bottom: 10px; /* Add margin between buttons vertically */
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }
