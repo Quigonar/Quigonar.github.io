@@ -5,6 +5,16 @@
     justify-content: center;
     height: 100vh;
   }
+
+  .bear-img {
+    max-width: 100vw;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .buttons {
     display: flex;
@@ -18,4 +28,16 @@
   .no {
     background-color: red;
     color: white; 
+  }
+
+  @media (max-width: 600px) {
+    .buttons {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .element {
+        max-width: 768px; /* For example, limit to 768px for screens larger than 768px */
+    }
   }
