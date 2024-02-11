@@ -60,7 +60,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    display: none;
     cursor: default;
     font-size: 12px;
     border-radius: 10px;

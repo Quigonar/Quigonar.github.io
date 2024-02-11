@@ -46,9 +46,10 @@
             const mainImage = document.getElementById('mainImage');
             const textScreen = document.getElementById('text');
             const envelope = document.getElementById('envelope');
+            const envelopeContent = document.getElementById('envelopeContent')
             const clickMe = document.getElementById('clickMe');
 
-            envelope.style.display = "none";
+            envelopeContent.style.display = "none";
             clickMe.style.display = "none";
 
             let yesButtonSize = 13;
@@ -85,7 +86,7 @@
 
                 yesButton.style.display = "none";
                 noButton.style.display = "none";
-
+                
                 envelope.style.display = "block";
                 clickMe.style.display = "block";
             });
@@ -94,6 +95,7 @@
                 envelope.classList.remove('open');
                 letter.style.display = "none";
                 clickMe.style.display = "none";
+                envelopeContent.style.display = "block";
                 setTimeout(function () {
                     envelope.classList.add('open');
                 }, 10);
