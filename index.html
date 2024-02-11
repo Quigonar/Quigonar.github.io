@@ -20,6 +20,7 @@
                     </p>
                     <p>
                         Luego yo se que vos y yo tenemos clase el miércoles peroooo si podés sacar un tiempito el mismo 14 hacemos algo, 
+                        tampoco es que quiero que pierdas clase, 
                         si no la otra propuesta que te doy es que hagamos algo el sábado y celebramos San Valentín ese día.
                     </p>
                     <p>
@@ -46,6 +47,9 @@
             const textScreen = document.getElementById('text');
             const envelope = document.getElementById('envelope');
             const clickMe = document.getElementById('clickMe');
+
+            envelope.style.display = "none";
+            clickMe.style.display = "none";
 
             let yesButtonSize = 13;
             yesButton.style.fontSize = yesButtonSize + 'px';
@@ -83,6 +87,7 @@
                 noButton.style.display = "none";
 
                 envelope.style.display = "block";
+                clickMe.style.display = "block";
             });
 
             envelope.addEventListener('click', function () {
