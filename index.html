@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <title>Carta de San Valentin</title>
+    <title>Carta de San Valentín</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="container">
         <div class="card">
             <img class="bear-img" src="cat.gif" alt="Cute bear with roses" id="mainImage">
 
-            <h1 id="text">Queres ser mi valentine?</h1>
+            <div class="envelope" id="envelope">
+                <img class="bear-img" src="letter.png" alt="letter" id="letter">
+                <h1 id="clickMe">Click Me!</h1>
+                <div class="envelope-content" id="envelopeContent">
+                    <p>
+                        Holii primero que todo espero que te haya gustado y te haya sacado una risita. 
+                    </p>
+                    <p>
+                        Luego yo se que vos y yo tenemos clase el miércoles peroooo si podés sacar un tiempito el mismo 14 hacemos algo, 
+                        si no la otra propuesta que te doy es que hagamos algo el sábado y celebramos San Valentín ese día.
+                    </p>
+                    <p>
+                        Por último, no se que respondes por aquí así que ocuparía que me escribas cual plan te parece mejor.
+                    </p>
+                </div>
+            </div>
+
+            <h1 id="text">¿Quieres ser mi Valentine?</h1>
 
             <div class="buttons">
-                <button class="yes" id="yesBtn">Si</button>
+                <button class="yes" id="yesBtn">Sí</button>
                 <button class="no" id="noBtn">No</button>
             </div>
+            
         </div>
     </div>
 
@@ -28,6 +44,8 @@
             const noButton = document.getElementById('noBtn');
             const mainImage = document.getElementById('mainImage');
             const textScreen = document.getElementById('text');
+            const envelope = document.getElementById('envelope');
+            const clickMe = document.getElementById('clickMe');
 
             let yesButtonSize = 13;
             yesButton.style.fontSize = yesButtonSize + 'px';
@@ -40,11 +58,11 @@
                 "Solo piénsalo",
                 "Si dices que no me pongo muy triste",
                 "Me voy a poner a llorar",
-                "Porfavor di que si",
+                "Por favor di que sí",
                 "Voy a estar demasiado demasiado triste",
-                "Me estas rompiendo el corazón",
+                "Me estás rompiendo el corazón",
                 "Bueno me rindo",
-                "MENTIRA PORFAVOR DI QUE SI!!!"
+                "MENTIRA POR FAVOR DI QUE SÍ!!!"
             ];
 
             let index = 1;
@@ -58,13 +76,24 @@
             });
             
             yesButton.addEventListener('click', function () {
-                mainImage.src = 'cat2.gif';
-                textScreen.textContent = "yayyy!";
+                mainImage.style.display = "none";
+                textScreen.style.display = "none";
+
                 yesButton.style.display = "none";
                 noButton.style.display = "none";
+
+                envelope.style.display = "block";
+            });
+
+            envelope.addEventListener('click', function () {
+                envelope.classList.remove('open');
+                letter.style.display = "none";
+                clickMe.style.display = "none";
+                setTimeout(function () {
+                    envelope.classList.add('open');
+                }, 10);
             });
         });
     </script>
 </body>
-
 </html>
