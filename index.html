@@ -14,7 +14,7 @@
             <div class="envelope" id="envelope">
                 <img class="bear-img" src="letter.png" alt="letter" id="letter">
                 <h1 id="clickMe">Click Me!</h1>
-                <div class="envelope-content" id="envelopeContent">
+                <div class="envelope-content" id="envelopeContent" style="visibility: hidden">
                     <p>
                         Holii primero que todo espero que te haya gustado y te haya sacado una risita. 
                     </p>
@@ -96,6 +96,7 @@
                 letter.style.display = "none";
                 clickMe.style.display = "none";
                 envelopeContent.style.display = "block";
+                envelopeContent.style.visibility = "visible";
                 setTimeout(function () {
                     envelope.classList.add('open');
                 }, 10);
