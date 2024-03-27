@@ -44,24 +44,48 @@ body {
   border-radius: 4px;
 }
 
+.custom-button:hover {
+  background-color: #3c8d3f;
+}
+
 .custom-button i {
   margin-right: 5px;
 }
 
-.fancy-text {
+.fancy-text-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Homemade Apple', cursive;
-  font-size: 48px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
 
-.custom-button:hover {
-    background-color: #3c8d3f;
+@keyframes writing {
+  0% { stroke-dasharray: 0 50%; }
+  100% { stroke-dasharray: 50% 0;}
+}
+
+svg text{
+  font-family: 'Homemade Apple';
+  font-size: 48px;
+  font-weight: 100;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 0;
+  animation: textAnimate 5s ease-in-out infinite alternate;
+}
+
+@keyframes textAnimate {
+  0% { 
+        stroke-dashoffset: 300; 
+        fill: transparent;
+    }
+  100% { 
+        stroke-dashoffset: 0; 
+        fill: #fff;
+    }
 }
 
 .night {
