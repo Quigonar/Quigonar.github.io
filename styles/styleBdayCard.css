@@ -1,163 +1,354 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #239ac2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #00bbf9;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 500ms;
+  z-index: 500;
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .front-text {
+  display: none;
+}
+
+.birthdayCard:hover .wrap-deco {
+  display: none;
+}
+
+.birthdayCard:hover .wrap-decoTwo {
+  display: none;
+}
+
+.birthdayCard:hover .plate {
+  display: none;
+}
+
+.cardFront {
+  position: relative;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+  transition: .4s;
+}
+
+.happy,
+.toyou {
+  position: relative;
+  font-family: didot;
+  text-align: center;
+  backface-visibility: hidden;
+  font-size: 30px;
+}
+
+.happy {
+  top: 198px;
+}
+
+.toyou {
+  top: 123px;
+}
+
+.bday {
+  position: relative;
+  font-family: arial;
+  font-size: 35px;
+  text-align: center;
+  top: 163px;
+}
+
+.wrap-deco {
+  position: absolute;
+  top: -230px;
+  left: -200px;
+}
+
+.decorations {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  border: 3px solid #333;
+  border-radius: 50%;
+}
+
+.decorations:before,
+.decorations:after,
+.decorationsTwo:before,
+.decorationsTwo:after,
+.decorationsThree:before,
+.decorationsThree:after {
+  content: "";
+  position: absolute;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.decorations:before {
+  border-top: 40px solid #f15bb5;
+  top: 297px;
+  left: 210px;
+  transform: rotate(-5deg);
+}
+
+.decorations:after {
+  border-top: 40px solid #f4d35e;
+  top: 288px;
+  left: 260px;
+  transform: rotate(-17deg);
+}
+
+.decorationsTwo:before {
+  border-top: 40px solid #00f5d4;
+  top: 268px;
+  left: 315px;
+  transform: rotate(-30deg);
+}
+
+.decorationsTwo:after,
+.decorationsThree:after {
+  border-top: 40px solid #9b5de5;
+  top: 238px;
+  left: 355px;
+  transform: rotate(-40deg);
+}
+
+.wrap-decoTwo {
+  transform: scaleX(-1);
+  position: absolute;
+  top: -230px;
+  left: 445px;
+}
+
+.decorationsThree:before {
+  border-top: 40px solid #00bbf9;
+  top: 268px;
+  left: 315px;
+  transform: rotate(-30deg);
+}
+
+.plate {
+  position: absolute;
+  width: 130px;
+  height: 5px;
+  background-color: #00bbf9;
+  left: 60px;
+  top: 213px;
+}
+
+.cake {
+  position: absolute;
+  overflow: hidden;
+  width: 100px;
+  height: 50px;
+  background-color: #f15bb5;
+  border-radius: 10px 10px 0 0;
+  top: -50px;
+  left: 15px;
+  box-shadow: inset 0 -15px #f9c74f, inset 0 15px #432818;
+}
+
+.cake:before {
+  content: "";
+  position: absolute;
+  background-color: #432818;
+  width: 10px;
+  height: 20px;
+  top: 5px;
+  border-radius: 20px;
+  box-shadow: 10px 5px #f15bb5, 20px 0px #432818, 30px 2px #f15bb5, 40px 5px #432818, 50px 5px #f15bb5, 60px 0px #432818, 70px 5px #f15bb5, 80px 5px #432818, 90px 5px #f15bb5;
+}
+
+.plate:before {
+  content: "";
+  position: absolute;
+  background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #00f5d4 3px, #00f5d4 6px);
+  width: 7px;
+  height: 25px;
+  top: -75px;
+  left: 61px;
+}
+
+.plate:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 5px;
+  background-color: #333;
+  top: -80px;
+  left: 64px;
+}
+
+
+.flame {
+  position: absolute;
+  background-color: #fb5607;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  transform: rotate(-45deg);
+  width: 15px;
+  height: 15px;
+  opacity: 0.7;
+  top: -93px;
+  left: 57px;
+}
+
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height: 350px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+.inside-text {
+  position: relative;
+  top: -160px;
+  transform: scale(0.7);
+}
+
+.wishes {
+  position: relative;
+  top: -14px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+p {
+  font-family: 'Brush Script MT', cursive;
+  color: #333;
+}
+
+.name {
+  margin-left: 150px;
+}
+
+.balloon-container-1 {
+  position: absolute;
+  bottom: -100vh; /* Move the balloons off the screen initially */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  transition: bottom 5s ease-in-out; /* Add a transition for smooth animation */
+}
+
+.balloon-container-2 {
+  position: absolute;
+  bottom: -100vh; /* Move the balloons off the screen initially */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  transition: bottom 6s ease-in-out; /* Add a transition for smooth animation */
+}
+
+.balloon-container-3 {
+  position: absolute;
+  bottom: -100vh; /* Move the balloons off the screen initially */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  transition: bottom 7s ease-in-out; /* Add a transition for smooth animation */
+}
+
+.confetti-container {
+  position: absolute;
+  bottom: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.birthdayCard:hover ~ .balloon-container-1 {
+  bottom: 100vh; /* Move the balloons to the top when the card is hovered over */
+}
+
+.birthdayCard:hover ~ .balloon-container-2 {
+  bottom: 100vh; /* Move the balloons to the top when the card is hovered over */
+}
+
+.birthdayCard:hover ~ .balloon-container-3 {
+  bottom: 100vh; /* Move the balloons to the top when the card is hovered over */
+}
+
+.birthdayCard:hover ~ .confetti-container {
+  bottom: -100vh; /* Move the confetti to the bottom when the card is hovered over */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(-4deg);
   }
-  
-  .birthdayCard {
-    position: relative;
-    width: 250px;
-    height: 350px;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transform: perspective(2500px);
-    transition: 1s;
+  50% {
+    transform: translateY(-25px) rotate(4deg);
   }
-  
-  .birthdayCard:hover {
-    transform: perspective(2500px) rotate(5deg);
-    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
-      0 10px 100px rgba(0, 0, 0, 0.5);
+  100% {
+    transform: translateY(0) rotate(-4deg);
   }
-  
-  .birthdayCard:hover .cardFront {
-    transform: rotateY(-160deg);
+}
+
+@keyframes fall-1 {
+  0% {
+    transform: translateY(-100vh) rotateZ(0deg) rotateX(0deg) rotateY(0deg);
   }
-  
-  .birthdayCard:hover .happy {
-    visibility: hidden;
+  100% {
+    transform: translateY(100vh) rotateZ(720deg) rotateX(720deg) rotateY(720deg);
   }
-  
-  .cardFront {
-    position: relative;
-    background-color: #fff;
-    width: 250px;
-    height: 350px;
-    overflow: hidden;
-    transform-origin: left;
-    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
-      30px 0 50px rgba(0, 0, 0, 0.4);
-    transition: 0.6s;
+}
+
+@keyframes fall-2 {
+  0% {
+    transform: translateY(-100vh) rotateZ(180deg) rotateX(180deg) rotateY(180deg);
   }
-  
-  .happy {
-    font-family: Tahoma, sans-serif;
-    text-align: center;
-    margin: 30px;
-    background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
-    transition: 0.1s;
+  100% {
+    transform: translateY(100vh) rotateZ(540deg) rotateX(540deg) rotateY(540deg);
   }
-  
-  .balloons {
-    position: absolute;
+}
+
+@keyframes fall-3 {
+  0% {
+    transform: translateY(-100vh) rotateZ(270deg) rotateX(270deg) rotateY(270deg);
   }
-  
-  .balloon-1,
-  .balloon-2,
-  .balloon-3,
-  .balloon-4 {
-    position: absolute;
-    width: 85px;
-    height: 95px;
-    border-radius: 50%;
+  100% {
+    transform: translateY(100vh) rotateZ(720deg) rotateX(720deg) rotateY(720deg);
   }
-  
-  .balloon-1 {
-    background-color: rgba(255, 40, 90, 0.7);
-    left: -10px;
-    top: 50px;
-  }
-  
-  .balloon-2 {
-    background-color: rgba(9, 215, 160, 0.7);
-    left: 50px;
-    top: 20px;
-  }
-  
-  .balloon-3 {
-    background-color: rgba(255, 186, 26, 0.7);
-    left: 110px;
-    top: 50px;
-  }
-  
-  .balloon-4 {
-    background-color: rgba(12, 122, 159, 0.7);
-    left: 170px;
-    top: 50px;
-  }
-  
-  .balloon-1::before,
-  .balloon-2::before,
-  .balloon-3::before,
-  .balloon-4::before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 155px;
-    background-color: #ffc848;
-    top: 95px;
-    left: 43px;
-  }
-  
-  .balloon-1::after,
-  .balloon-2::after,
-  .balloon-3::after,
-  .balloon-4::after {
-    content: "";
-    position: absolute;
-    border-right: 7px solid transparent;
-    border-left: 7px solid transparent;
-    top: 94px;
-    left: 37px;
-  }
-  
-  .balloon-1::after {
-    border-bottom: 10px solid #ff3e6b;
-  }
-  
-  .balloon-2::after {
-    border-bottom: 10px solid #04b183;
-  }
-  
-  .balloon-3::after {
-    border-bottom: 10px solid #ffc94c;
-  }
-  
-  .balloon-4::after {
-    border-bottom: 10px solid #13a9bd;
-  }
-  
-  .cardInside {
-    position: absolute;
-    background-color: #fff;
-    width: 250px;
-    height: 350px;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
-  }
-  
-  p {
-    font-family: "Brush Script MT", cursive;
-    margin: 40px;
-    color: #333;
-  }
-  
-  .name {
-    position: absolute;
-    left: 150px;
-    top: 200px;
-    color: #333;
-  }
-  
-  .back {
-    font-family: Tahoma, sans-serif;
-    color: #333;
-    text-align: center;
-    margin: 30px;
-    outline-color: #333;
-    outline-style: dotted;
-  }
+}
+
+.balloon {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 5s infinite alternate;
+}
+
+.confetti {
+  position: absolute;
+  width: 25px;
+  height: 5px;
+}
