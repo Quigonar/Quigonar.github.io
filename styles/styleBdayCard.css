@@ -3,7 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #00bbf9;
+  background-color: #f7d9da;
 }
 
 .birthdayCard {
@@ -17,28 +17,28 @@ body {
   z-index: 500;
 }
 
-.birthdayCard:hover {
+.birthdayCard.clicked {
   transform: perspective(2500px) rotate(5deg);
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .15), 0 10px 100px rgba(0, 0, 0, 0.3);
 }
 
-.birthdayCard:hover .cardFront {
+.birthdayCard.clicked .cardFront {
   transform: rotateY(-160deg);
 }
 
-.birthdayCard:hover .front-text {
+.birthdayCard.clicked .front-text {
   display: none;
 }
 
-.birthdayCard:hover .wrap-deco {
+.birthdayCard.clicked .wrap-deco {
   display: none;
 }
 
-.birthdayCard:hover .wrap-decoTwo {
+.birthdayCard.clicked .wrap-decoTwo {
   display: none;
 }
 
-.birthdayCard:hover .plate {
+.birthdayCard.clicked .plate {
   display: none;
 }
 
@@ -286,19 +286,19 @@ p {
   display: flex;
 }
 
-.birthdayCard:hover ~ .balloon-container-1 {
+.birthdayCard.clicked ~ .balloon-container-1 {
   bottom: 100vh; /* Move the balloons to the top when the card is hovered over */
 }
 
-.birthdayCard:hover ~ .balloon-container-2 {
+.birthdayCard.clicked ~ .balloon-container-2 {
   bottom: 100vh; /* Move the balloons to the top when the card is hovered over */
 }
 
-.birthdayCard:hover ~ .balloon-container-3 {
+.birthdayCard.clicked ~ .balloon-container-3 {
   bottom: 100vh; /* Move the balloons to the top when the card is hovered over */
 }
 
-.birthdayCard:hover ~ .confetti-container {
+.birthdayCard.clicked ~ .confetti-container {
   bottom: -100vh; /* Move the confetti to the bottom when the card is hovered over */
 }
 

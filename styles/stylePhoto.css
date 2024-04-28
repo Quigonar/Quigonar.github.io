@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7d9da;
+  }
+  .photo-stack {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .photo {
+    position: absolute;
+    display: none;
+    width: 250px;
+    border: 15px solid white;
+    border-bottom: 40px solid white;
+    border-radius: 5px;
+  }
+  
+  .photo:nth-child(odd) {
+    transform: translate(-50%, -50%) rotateZ(5deg);
+  }
+  
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .polaroid-title {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+    padding: 5px;
+    width: calc(100% - 30px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .lyrics-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  .lyrics-container p {
+    font-size: 50px;
+    font-family: 'Homemade Apple';
+    text-align: center;
+  }
+  
+  #audio {
+    display: none;
+  }

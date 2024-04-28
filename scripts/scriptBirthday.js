@@ -91,3 +91,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+// Manage clicking of birthday card
+document.addEventListener('DOMContentLoaded', function() {
+  const birthdayCard = document.querySelector('.birthdayCard');
+
+  birthdayCard.addEventListener('click', function() {
+    this.classList.toggle('clicked');
+    setTimeout(function() {
+      window.location.href = "photoTransition.html";
+    }, 20000);
+  });
+});
